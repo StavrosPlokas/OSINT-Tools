@@ -110,7 +110,15 @@ class OSINTAnalyzer:
         self.last_request_time = {}
         self.min_request_interval = 1  # seconds
         self.service_intervals = {
-            'virustotal': 4.0  # One second delay for VirusTotal
+            'virustotal': 4.0,  # Four seconds delay for VirusTotal
+            'malware_bazaar': 2.0,
+            'hybrid_analysis': 5.0,
+            'anyrun': 5.0,
+            'abuseipdb': 1.5,
+            'shodan': 1.0,
+            'urlhaus': 2.0,
+            'geolocation': 1.0,
+            'securitytrails': 2.0
         }
         
     def _rate_limit(self, service: str):
