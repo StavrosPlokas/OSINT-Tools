@@ -523,7 +523,7 @@ The output of the analysis was the following
 }
 ```
 
-##🐞 Known Issues
+## 🐞 Known Issues
 - Some domains may not be detected accurately.
 - API request limits may cause temporary failures if too many IOCs are sent too quickly.
 - Limited domain enrichment (especially without SecurityTrails or similar).
