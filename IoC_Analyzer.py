@@ -569,8 +569,7 @@ class OSINTAnalyzer:
                 registrar=attributes.get('registrar'),
                 creation_date=datetime.fromtimestamp(attributes.get('creation_date'), timezone.utc).isoformat(),
                 last_analysis_stats=attributes.get('last_analysis_stats', {}),
-                # last_analysis_results=attributes.get('last_analysis_results',{}) Comment out if you want to print the reputation from the vendors.
-
+                
                 # Note: subdomains require a separate API call in v3
                 #subdomains_count=0  # Would need additional API call to get accurate count
             )
@@ -1111,23 +1110,6 @@ def load_config(config_file: str = None) -> Dict[str, str]:
             print(f"Config file {config_file} not found")
         except json.JSONDecodeError:
             print(f"Invalid JSON in config file {config_file}")
-    
-    # Override with environment variables
-    env_keys = [
-        'VIRUSTOTAL_API_KEY',
-        'HYBRIDANALYSIS_API_KEY',
-        'SHODAN_API_KEY',
-        'ABUSEIPDB_API_KEY',
-        'SECURITYTRAILS_API_KEY',
-        'ANYRUN_API_KEY',
-        'URLHAUS_API_KEY'
-    ]
-    
-    for env_key in env_keys:
-        if env_key in os.environ:
-            service_name = env_key.lower().replace('_api_key', '')
-            config[service_name] = os.environ[env_key]
-    
     return config
 
 def print_results(results: Dict):
