@@ -508,6 +508,13 @@ The output of the analysis was the following
 }
 ```
 
+## Known Issues
+- Sometimes domains are not identified correctly from and return error.
+- Usage is depended on API availability, it has been observed that if delayes are reduced and many IoCs need to be checked, the API might not be available.
+- Domain analysis is limited, but no further APIs identified that can be used for free.
+
+## Important
+Please utilize this tool with respect and do not perform exsessive ammounts of requests towards the APIs that are utilized.
 
 
 
