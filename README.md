@@ -367,7 +367,7 @@ The output of the analysis was the following
           "status": "error",
           "timestamp": "2025-07-30T06:13:33.253430",
           "url": null,
-          "error": "404 Client Error: Not Found for url: https://api.shodan.io/shodan/host/61.53.127.74?key=cGve62hhzHi9T3nYkpUxvfZfPBx72gB6"
+          "error": "404 Client Error:"
         },
         "geolocation": {
           "service": "IP Geolocation",
