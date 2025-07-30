@@ -32,4 +32,6 @@ This script has the following usefull features:
 For the test I utilized a configuration file that contains the relevant API keys.
 
 Regarding its usage, we will check every single IoC that this script supports starting from the hash.
+
+## POC 
 For example, 
