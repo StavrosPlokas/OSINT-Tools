@@ -34,4 +34,15 @@ For the test I utilized a configuration file that contains the relevant API keys
 Regarding its usage, we will check every single IoC that this script supports starting from the hash.
 
 ## POC 
-For example, 
+For example, using the IoC_analyzer.py script we can analyze a hash. The script autodetect can the IoCs that are provided by the user. Although the user can state what type he wants to examine.
+The following commands can be utilized direct from the CLI.
+```
+python3 IoC_analyzer.py -c config.json -t hash 7c59ac829ee7bdd43413539d2a8a6a968d2fb35fe56b935b5f0a4baef8dcdb25
+python3 IoC_analyzer.py -c config.json 7c59ac829ee7bdd43413539d2a8a6a968d2fb35fe56b935b5f0a4baef8dcdb25
+```
+Botf of these commands have the following output:
+<img width="1704" height="695" alt="image" src="https://github.com/user-attachments/assets/488371c4-f96c-4da8-aba5-e9811f8417b5" />
+By default, the script will store the ouput of the last command to analysis_results.json file, but the user can also choose the file he wants to ouput the results.
+
+
+
