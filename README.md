@@ -33,7 +33,8 @@ For the test I utilized a configuration file that contains the relevant API keys
 
 Regarding its usage, we will check every single IoC that this script supports starting from the hash.
 
-## POC 
+# POC 
+## Hash analysis
 For example, using the IoC_analyzer.py script we can analyze a hash. The script autodetect can the IoCs that are provided by the user. Although the user can state what type he wants to examine.
 The following commands can be utilized direct from the CLI.
 ```
@@ -65,6 +66,20 @@ The following figures illustrate the results of the relevant examination.
 <img width="1704" height="698" alt="image" src="https://github.com/user-attachments/assets/70a5df68-6310-4655-97aa-62994f4026bd" />
 <img width="1701" height="671" alt="image" src="https://github.com/user-attachments/assets/afd99b47-123c-4f86-ae5b-091c1391eeff" />
 
+## IP analysis
+To analyze IPs, the following commands can be utilized, command to fetch IPs from a file is also contained.
+```
+python3 IoC_analyzer.py -c config.json 61.52.55.150
+python3 IoC_analyzer.py -c config.json -t ip 61.52.55.150
+python3 IoC_analyzer.py -c config.json --input-file testIP.txt --output testIP.json
+```
+
+## Domain Analysis
+To analyze domains the following commands can be utilized, command to analyze domains from a file is also contained.
+```
+python3 IoC_analyzer.py -c config.json -t domain 19ak90ckxyjxc.life
+python3 IoC_analyzer.py -c config.json 19ak90ckxyjxc.life
+```
 
 
 
