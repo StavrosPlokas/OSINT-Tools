@@ -1,0 +1,7 @@
+{
+    "malware_bazaar": "YOUR_API_KEY",
+    "virustotal": "YOUR_API_KEY",
+    "abuseipdb": "YOUR_API_KEY",
+    "urlhaus": "YOUR_API_KEY",
+    "shodan": "YOUR_API_KEY"
+}
