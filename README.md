@@ -44,5 +44,28 @@ Botf of these commands have the following output:
 <img width="1704" height="695" alt="image" src="https://github.com/user-attachments/assets/488371c4-f96c-4da8-aba5-e9811f8417b5" />
 By default, the script will store the ouput of the last command to analysis_results.json file, but the user can also choose the file he wants to ouput the results.
 
+This can be done by utiling the -o or --output flag.
+
+The following command is the relevant example that the results are outputed to a json file with name the hash that was used for the examination.
+```
+python3 IoC_analyzer.py -c config.json -t hash 7c59ac829ee7bdd43413539d2a8a6a968d2fb35fe56b935b5f0a4baef8dcdb25 -o 7c59ac829ee7bdd43413539d2a8a6a968d2fb35fe56b935b5f0a4baef8dcdb25.json
+```
+Please note that the ouputted files contain additionall information regarding the examination of the hash.
+For example, the json file contains the vendors that have flagged this file as malicious as illustrated on the following figure.
+<img width="1183" height="918" alt="image" src="https://github.com/user-attachments/assets/671bde84-c79b-4052-8e7a-4f5852b9e820" />
+
+Finally, a user can analyze multiple hashes, as POC the following figure illustrates the hashes that were choosed for examination.
+<img width="557" height="60" alt="image" src="https://github.com/user-attachments/assets/328a29d8-4fec-46b2-8b2f-0e00c2afdd28" />
+
+Utilizing the following command, the files were sucessfully checked in VirusTotal and MalwareBazaar and the findings were stored in the file with name test2.json
+```
+python3 IoC_analyzer.py -c config.json --input-file test2.txt --output test2.json
+```
+The following figures illustrate the results of the relevant examination.
+<img width="1704" height="698" alt="image" src="https://github.com/user-attachments/assets/70a5df68-6310-4655-97aa-62994f4026bd" />
+<img width="1701" height="671" alt="image" src="https://github.com/user-attachments/assets/afd99b47-123c-4f86-ae5b-091c1391eeff" />
+
+
+
 
 
