@@ -1,35 +1,50 @@
-# OSINT-Tools
-Collection of tools that might make the life of SOC analysts or IR analysts a little easier
+# 🔍 OSINT-Tools
 
+A curated collection of tools designed to simplify the work of SOC and Incident Response (IR) analysts.
 
-IoC_analyzer.py is a multipurpose tool that aims to facilitate the rapid triaging of IoCs utiling various platforms.
-The first version has been tested with the following tools:
-- Virus Total
-- AbuseIPDB
-- ip-api.com (No API key is needed)
-- Malware Bazaar
-- URLhaus
+## 📌 Tool: `IoC_analyzer.py`
 
-Please note that the tool has been tested with single IoC and up to 8 IoCs, this is due to API limitations when utilizing the free API, for example VT has API limitations, for more information please read the API documentations and modify the script based on your needs as well as based on your accounts
-Please note that the time intervals between requests have been choosed to respect the Platforms' APIs without abusing the relevant resources.
+**`IoC_analyzer.py`** is a multipurpose, CLI-based OSINT analyzer designed for **rapid triage and enrichment of Indicators of Compromise (IOCs)** using multiple public threat intelligence platforms.
 
-Also, within the script there are integrations with the following tools:
--Anyrun
--securitytrails
--Hybrid Analysis
--Shodan
+---
 
-These integrations have not been tested as i do not own any of the above API keys
+## ✅ Supported Services
 
-This script has the following usefull features:
-- 🔍 Auto-detect input type: IP, Domain, Hash (MD5/SHA1/SHA256), or URL.
-- 🔗 Queries 8+ Threat Intelligence platforms.
-- 📁 Supports single IOCs or batch input via text files.
-- 💡 Built-in rate-limiting per service to avoid throttling.
-- 🔐 API key support via config file or environment variables.
-- 📊 Human-readable or JSON output for automation/SIEM integration.
+Tested integrations:
+- [x] **VirusTotal**
+- [x] **AbuseIPDB**
+- [x] **ip-api.com** (no API key required)
+- [x] **Malware Bazaar**
+- [x] **URLhaus**
 
-For the test a configuration file was utilized that contained the relevant API keys.
+Also integrated (but not tested due to lack of API keys):
+- [ ] **Any.run**
+- [ ] **SecurityTrails**
+- [ ] **Hybrid Analysis**
+- [ ] **Shodan**
+
+---
+
+## 🔧 Features
+
+- ✅ Auto-detects IOC type: IP, Domain, URL, or Hash (MD5/SHA1/SHA256).
+- 🌐 Aggregates results from 8+ threat intel platforms.
+- 🗂️ Supports single or batch IOC analysis (via input file).
+- 🕓 Built-in rate-limiting to respect API limits.
+- 🔐 API key support via JSON config file or environment variables.
+- 📄 Saves results as pretty JSON (`analysis_results.json` or custom output file).
+- 🧠 Human-readable CLI output and JSON format for automation/SIEM ingestion.
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.7+
+- Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+
+For the test a configuration file was utilized that contained the relevant API keys. When using it with configuration file keep in mind to insert the correct path where the file is stored.
 
 Regarding its usage, we will check every single IoC that this script supports starting from the hash.
 
@@ -508,13 +523,15 @@ The output of the analysis was the following
 }
 ```
 
-## Known Issues
-- Sometimes domains are not identified correctly from and return error.
-- Usage is depended on API availability, it has been observed that if delayes are reduced and many IoCs need to be checked, the API might not be available.
-- Domain analysis is limited, but no further APIs identified that can be used for free.
+##🐞 Known Issues
+- Some domains may not be detected accurately.
+- API request limits may cause temporary failures if too many IOCs are sent too quickly.
+- Limited domain enrichment (especially without SecurityTrails or similar).
 
-## Important
-Please utilize this tool with respect and do not perform exsessive ammounts of requests towards the APIs that are utilized.
+## ⚠️ Respect Usage Limits
+This script includes delays to avoid API abuse. Still, please avoid excessive requests or using free-tier APIs in a loop without delay.
+
+
 
 
 
