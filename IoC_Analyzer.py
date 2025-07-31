@@ -1096,7 +1096,7 @@ class OSINTAnalyzer:
         return analysis_result
 
 def load_config(config_file: str = None) -> Dict[str, str]:
-    """Load configuration from file or environment variables"""
+    """Load configuration from file"""
     import os
     
     config = {}
@@ -1193,7 +1193,7 @@ def main():
 
     if not config:
         print("⚠️  Warning: No API keys configured. Limited functionality available.")
-        print("   Set API keys via environment variables or config file.")
+        print("   Set API keys via config file.")
 
     # Initialize analyzer
     analyzer = OSINTAnalyzer(config)
