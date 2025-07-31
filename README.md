@@ -44,6 +44,16 @@ Also integrated (but not tested due to lack of API keys):
   ```bash
   pip install -r requirements.txt
 
+The following modules are part of the Python Standard Library and do NOT need to be in requirements.txt: 
+- json
+- re
+- time
+- hashlib
+- socket
+- dataclasses (Python 3.7+)
+- datetime
+- argparse
+
 For the test a configuration file was utilized that contained the relevant API keys. When using it with configuration file keep in mind to insert the correct path where the file is stored.
 
 Regarding its usage, we will check every single IoC that this script supports starting from the hash.
