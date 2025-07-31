@@ -31,7 +31,7 @@ Also integrated (but not tested due to lack of API keys):
 - 🌐 Aggregates results from 8+ threat intel platforms.
 - 🗂️ Supports single or batch IOC analysis (via input file).
 - 🕓 Built-in rate-limiting to respect API limits.
-- 🔐 API key support via JSON config file or environment variables.
+- 🔐 API key support via JSON config file.
 - 📄 Saves results as pretty JSON (`analysis_results.json` or custom output file).
 - 🧠 Human-readable CLI output and JSON format for automation/SIEM ingestion.
 
